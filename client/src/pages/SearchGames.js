@@ -33,7 +33,7 @@ const SearchGames = () => {
 
         try {
             //this is where the api https link will go
-            const response = await fetch(`=${searchInput}`);
+            const response = await fetch(`https://api.twitch.tv/helix/analytics/games=${searchInput}`);
 
             if (!response.ok){
                 throw new Error('something went wrong!');
