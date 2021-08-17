@@ -127,7 +127,7 @@ const SearchGames = () => {
                         <Button
                           disabled={savedGameIds?.some((savedGameId) => savedGameId === game.gameId)}
                           className='btn-block btn-info'
-                          onClick={() => handleSaveBook(game.gameId)}>
+                          onClick={() => handleSaveGame(game.gameId)}>
                           {savedGameIds?.some((savedGameId) => savedGameId === game.gameId)
                             ? 'This book has already been saved!'
                             : 'Save this Book!'}
