@@ -6,6 +6,8 @@ import { SAVE_GAME } from '../utils/mutations';
 import { useMutation } from '@apollo/react-hooks';
 import { saveGameIds, getSavedGameIds } from '../utils/localStorage';
 
+const apiKey = af988673270a4b798f8ffffb132779ce; //rawg api key
+
 const SearchGames = () => {
     const [saveGame] = useMutation(SAVE_GAME);
 
@@ -33,7 +35,7 @@ const SearchGames = () => {
 
         try {
             //this is where the api https link will go
-            const response = await fetch(`https://api.twitch.tv/helix/analytics/games=${searchInput}`);
+            const response = await fetch(`https://api.rawg.io/api/games=${searchInput}`); //https://api.twitch.tv/helix/analytics/games=
 
             if (!response.ok){
                 throw new Error('something went wrong!');
