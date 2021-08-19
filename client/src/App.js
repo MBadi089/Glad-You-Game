@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react';
 // import SearchGames from './pages/SearchGames';
 // import SavedGames from './pages/SavedGames';
@@ -48,3 +49,5 @@ function App() {
 }
 
 export default App;
+=======
+>>>>>>> MBdevelop
