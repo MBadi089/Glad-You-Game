@@ -6,7 +6,8 @@ import { SAVE_GAME } from '../utils/mutations';
 import { useMutation } from '@apollo/react-hooks';
 import { saveGameIds, getSavedGameIds } from '../utils/localStorage';
 
-const API_KEY = 'af988673270a4b798f8ffffb132779ce'; //rawg api key
+const APIKey = 'key=af988673270a4b798f8ffffb132779ce'; //rawg api key
+const urlGetGameList = 'https://api.rawg.io/api/games?';
 
 const SearchGames = () => {
     const [saveGame] = useMutation(SAVE_GAME);
@@ -35,7 +36,7 @@ const SearchGames = () => {
 
         try {
             //this is where the api https link will go
-            const response = await fetch(`https://api.rawg.io/api/games/{id}`); 
+            const response = await fetch(urlGetGameList + APIKey +`&search=` + `${searchInput}`); 
             console.log(response);
 
             if (!response.ok){
