@@ -1,7 +1,7 @@
 # Glad You Game
 [![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
 ## Description
-This deployed web page(through heroku) showcases our understanding of React, GraphQL with a Node.js and Express.js server, html/css front end with CRUD capabalities as well as authentification of sensitive information. There are many more deployed technologies as well as a displayed profeciency of Javascript, MongoDB, the Mongoose ODM and much more.
+This deployed web page(through heroku) showcases our team of 6's understanding of React, GraphQL with a Node.js and Express.js server, html/css front end with CRUD capabalities as well as authentification of sensitive information. There are many more deployed technologies as well as a displayed profeciency of Javascript, MongoDB, the Mongoose ODM and much more. This is the culmination of a 6 month bootcamp and was made in two weeks, it shows our colloborative and teamwork efforts, as well as our technical prowess, enjoy
 
 ## Table of Contents
 * [Website](#Website)
