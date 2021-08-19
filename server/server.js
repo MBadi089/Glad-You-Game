@@ -37,3 +37,5 @@ db.once('open', () => {
     console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`)
   });
 });
+
+// 8/19/21 change, working version being pushed as we devleop together
