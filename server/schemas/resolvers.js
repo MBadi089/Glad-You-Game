@@ -7,7 +7,8 @@ const resolvers = {
     me: async (parent, args, context) => {
       if (context.user) {
         const userData = await User.findOne({ _id: context.user._id })
-          .select('-__v -password');
+          .select('-__v -password')
+          .populate('reviews');
         return userData;
       }
 
@@ -38,6 +39,20 @@ const resolvers = {
       const token = signToken(user);
 
       return { token, user };
+    },
+
+    addReview: async(parent, { gameId, reviewBody }, context) => {
+      if (context.user) {
+        const updatedGame = await Game.findOneAndUpdate(
+          { gameId: gameId },
+          { $push: { reviews: { reviewBody, username: context.user.username } } },
+          { new: true, runValidators: true }
+        );
+
+        return updatedGame;
+      }
+
+      throw new AuthenticationError('You need to be logged in!');
     },
 
     saveGame: async (parent, { gameBody } , context) => {

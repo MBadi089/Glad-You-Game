@@ -3,7 +3,7 @@ import { Jumbotron, Container, Col, Form, Button, Card, CardColumns } from 'reac
 
 import Auth from '../utils/auth';
 import { SAVE_GAME } from '../utils/mutations';
-import { useMutation } from '@apollo/react-hooks';
+import { useMutation } from '@apollo/client';
 import { saveGameIds, getSavedGameIds } from '../utils/localStorage';
 
 const APIKey = 'key=af988673270a4b798f8ffffb132779ce'; //rawg api key
@@ -47,10 +47,11 @@ const SearchGames = () => {
 
             const gameData = items.map((game) => ({
                 gameId: game.id,
-                publisher: game.gameInfo.publisher || ['No publisher to display'],
-                title: game.gameInfo.title,
-                description: game.gameInfo.description,
-                image: game.gameInfo.imageLinks?.thumbnail || '',
+                name: game.name,
+                image: game.background_image,
+                rating: game.rating,
+                ratings_count: game.ratings_count,
+                esrb: game.esrb_rating.name
             }));
 
             setSearchedGames(gameData);
@@ -74,7 +75,7 @@ const SearchGames = () => {
         }
 
         try {
-            const { data } = await saveGame({varibales: {gameData: {...gameToSave}}});
+            const { data } = await saveGame({variables: {gameBody: gameToSave}});
 
             //if book successfully saves to user's account, save book id to state
             setSavedGameIds([...savedGameIds, gameToSave.gameId]);
@@ -97,7 +98,7 @@ const SearchGames = () => {
                       onChange={(e) => setSearchInput(e.target.value)}
                       type='text'
                       size='lg'
-                      placeholder='Search for a book'
+                      placeholder='Search for a game'
                     />
                   </Col>
                   <Col xs={12} md={4}>
@@ -114,7 +115,7 @@ const SearchGames = () => {
             <h2>
               {searchedGames.length
                 ? `Viewing ${searchedGames.length} results:`
-                : 'Search for a Game to begin'}
+                : 'Search for a game to begin'}
             </h2>
             <CardColumns>
               {searchedGames.map((game) => {
@@ -124,17 +125,18 @@ const SearchGames = () => {
                       <Card.Img src={game.image} alt={`The cover for ${game.title}`} variant='top' />
                     ) : null}
                     <Card.Body>
-                      <Card.Title>{game.title}</Card.Title>
-                      <p className='small'>Publisher: {game.publisher}</p>
-                      <Card.Text>{game.description}</Card.Text>
+                      <Card.Title>{game.name}</Card.Title>
+                      <Card.Text>Rating: {game.esrb}</Card.Text>
+                      <Card.Text>Average Score: {game.rating} <span>From {game.ratings_count} ratings</span></Card.Text>
+                      {/* <Card.Text>{game.description}</Card.Text> */}
                       {Auth.loggedIn() && (
                         <Button
                           disabled={savedGameIds?.some((savedGameId) => savedGameId === game.gameId)}
                           className='btn-block btn-info'
                           onClick={() => handleSaveGame(game.gameId)}>
                           {savedGameIds?.some((savedGameId) => savedGameId === game.gameId)
-                            ? 'This book has already been saved!'
-                            : 'Save this Book!'}
+                            ? 'Saved!'
+                            : 'Save to Collection'}
                         </Button>
                       )}
                     </Card.Body>
