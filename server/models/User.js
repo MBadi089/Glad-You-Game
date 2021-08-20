@@ -21,6 +21,12 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
+    reviews: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Review'
+      }
+    ],
     // set savedGames to be an array of data that adheres to the gameSchema
     savedGames: [gameSchema],
   },
