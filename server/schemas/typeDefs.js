@@ -7,7 +7,6 @@ const typeDefs = gql`
     email: String
     gameCount: Int
     savedGames: [Game]
-    reviews: [Review]
   }
 
   type Game {
@@ -29,7 +28,6 @@ const typeDefs = gql`
     rating: Int
     ratings_count: Int
     esrb: String
-    reviews: [Review]
   }
 
   type Review {
