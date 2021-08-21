@@ -1,15 +1,13 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
-// import schema from Game.js
-const gameSchema = require('./Game');
-
 const userSchema = new Schema(
   {
     username: {
       type: String,
       required: true,
       unique: true,
+      trim: true
     },
     email: {
       type: String,
@@ -19,18 +17,15 @@ const userSchema = new Schema(
     },
     password: {
       type: String,
-      required: true,
+      required: true
     },
-    reviews: [
+    savedGames: [
       {
         type: Schema.Types.ObjectId,
-        ref: 'Review'
+        ref: 'Game'
       }
-    ],
-    // set savedGames to be an array of data that adheres to the gameSchema
-    savedGames: [gameSchema],
+    ]
   },
-  // set this to use virtual below
   {
     toJSON: {
       virtuals: true

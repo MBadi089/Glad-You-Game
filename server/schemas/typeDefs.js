@@ -17,6 +17,7 @@ const typeDefs = gql`
     rating: Int
     ratings_count: Int
     esrb: String
+    reviewCount: Int
     reviews: [Review]
   }
 
