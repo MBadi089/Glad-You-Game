@@ -5,7 +5,7 @@ const reviewSchema = new Schema(
   {
     reviewBody: {
       type: String,
-      required: 'You need to leave a review!',
+      required: 'Please enter your review body',
       minlength: 1,
       maxlength: 280
     },

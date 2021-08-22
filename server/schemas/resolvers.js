@@ -1,4 +1,4 @@
-const { User } = require('../models');
+const { User, Game } = require('../models');
 const { AuthenticationError } = require('apollo-server-express');
 const { signToken } = require('../utils/auth');
 
@@ -8,11 +8,15 @@ const resolvers = {
       if (context.user) {
         const userData = await User.findOne({ _id: context.user._id })
           .select('-__v -password')
-          .populate('reviews');
+          .populate('savedGames');
         return userData;
       }
 
       throw new AuthenticationError('Not logged in');
+    },
+
+    game: async (parent, { gameId }) => {
+      return Game.findOne({ gameId });
     }
   },
 
