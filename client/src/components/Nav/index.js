@@ -3,9 +3,9 @@ import React from 'react';
 function Nav() {
 
     return (
-        <header>
+        <header className="flex-row px-1">
             <h2>
-                <a href="/"></a>
+                <a data-testid href="/"></a>
             </h2>
         </header>
     )
