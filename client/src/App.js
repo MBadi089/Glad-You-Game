@@ -5,6 +5,9 @@ import Navbar from './components/Navbar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
+import Login from './components/Login';
+import Nav from './components/Nav';
+import Signup from './components/Signup';
 
 // establish a new link to the GraphQL server
 const httpLink = createHttpLink({
@@ -32,6 +35,8 @@ const client = new ApolloClient({
 
 function App() {
   return (
+    <div>
+      <Nav />
     <ApolloProvider client={client}>
       <Router>
       <>
@@ -44,6 +49,7 @@ function App() {
       </>
       </Router>
     </ApolloProvider>
+    </div>
   );
 }
 

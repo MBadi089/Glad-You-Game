@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-import React from 'react';
-
-function Nav() {
-
-    return (
-        <header className="flex-row px-1">
-            <h2>
-                <a data-testid href="/"></a>
-            </h2>
-        </header>
-    )
-}
-=======
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
@@ -89,4 +75,3 @@ const AppNavbar = () => {
 };
 
 export default AppNavbar;
->>>>>>> 40786a5f1ff8e10cc9d499889846444b6fce57e2
