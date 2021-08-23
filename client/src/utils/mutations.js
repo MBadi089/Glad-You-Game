@@ -6,6 +6,8 @@ mutation loginUser($email: String!, $password: String!) {
     token
     user {
       _id
+      email
+      username
     }
   }
 }
@@ -19,15 +21,6 @@ mutation addUser($username: String!, $password: String!, $email: String!) {
       _id
       username
       email
-      gameCount
-      savedGames {
-            name
-            gameId
-            rating
-            ratings_count
-            image
-            esrb
-      }
     }
     token
   }
@@ -57,8 +50,8 @@ export const SAVE_GAME = gql`
 
 
 export const REMOVE_GAME = gql`
-    mutation removeGame($gameId: ID!) {
-        removeGame(gameId:$gameId) {
+    mutation removeGame($gameId: String!) {
+        removeGame(gameId: $gameId) {
             _id
             username
             email
@@ -75,4 +68,3 @@ export const REMOVE_GAME = gql`
 }
 `;
 
-// generic comment

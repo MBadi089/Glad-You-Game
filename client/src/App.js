@@ -1,7 +1,7 @@
 import React from 'react';
 // import SearchGames from './pages/SearchGames';
 // import SavedGames from './pages/SavedGames';
-import Navbar from './components/Navbar';
+import Navbar from './components/Nav';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
