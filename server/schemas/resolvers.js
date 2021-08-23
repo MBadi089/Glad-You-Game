@@ -1,4 +1,4 @@
-const { User } = require('../models');
+const { User, Game } = require('../models');
 const { AuthenticationError } = require('apollo-server-express');
 const { signToken } = require('../utils/auth');
 
@@ -7,11 +7,16 @@ const resolvers = {
     me: async (parent, args, context) => {
       if (context.user) {
         const userData = await User.findOne({ _id: context.user._id })
-          .select('-__v -password');
+          .select('-__v -password')
+          .populate('savedGames');
         return userData;
       }
 
       throw new AuthenticationError('Not logged in');
+    },
+
+    game: async (parent, { gameId }) => {
+      return Game.findOne({ gameId });
     }
   },
 
@@ -40,11 +45,25 @@ const resolvers = {
       return { token, user };
     },
 
-    saveGame: async (parent, { gameBody } , context) => {
+    addReview: async(parent, { gameId, reviewBody }, context) => {
+      if (context.user) {
+        const updatedGame = await Game.findOneAndUpdate(
+          { gameId: gameId },
+          { $push: { reviews: { reviewBody, username: context.user.username } } },
+          { new: true, runValidators: true }
+        );
+
+        return updatedGame;
+      }
+
+      throw new AuthenticationError('You need to be logged in!');
+    },
+
+    saveGame: async (parent, { gameData } , context) => {
       if (context.user) {
         const updatedUser = await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $push: { savedGames: gameBody } },
+          { $push: { savedGames: gameData } },
           { new: true, runValidators: true }
         );
 
