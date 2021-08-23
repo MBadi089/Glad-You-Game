@@ -19,14 +19,14 @@ mutation addUser($username: String!, $password: String!, $email: String!) {
       _id
       username
       email
-      bookCount
-      savedBooks {      (edit these)
-        authors
-        bookId
-        image
-        link
-        title
-        description
+      gameCount
+      savedGames {
+            name
+            gameId
+            rating
+            ratings_count
+            image
+            esrb
       }
     }
     token
@@ -35,21 +35,20 @@ mutation addUser($username: String!, $password: String!, $email: String!) {
 `;
 
 export const SAVE_BOOK = gql`
-    mutation saveBook($bookData: BookInput!) { (edit these)
-    saveBook (bookData: $bookData)
+    mutation saveGame($gameData: GameInput!) { 
+    saveGame (gameData: $gameData)
         {
             _id
             username
             email
-            bookCount
-            savedBooks {
-                # _id
-                bookId
-                authors
-                image
-                link
-                title
-                description
+            gameCount
+            savedGames {
+              name
+              gameId
+              rating
+              ratings_count
+              image
+              esrb
             }
         }
     }
@@ -58,20 +57,19 @@ export const SAVE_BOOK = gql`
 
 
 export const REMOVE_BOOK = gql`
-    mutation removeBook($bookId: ID!) {
-        removeBook(bookId:$bookId) {
+    mutation removeGame($gameId: ID!) {
+        removeGame(gameId:$gameId) {
             _id
             username
             email
-            bookCount
-            savedBooks {
-                # _id
-                bookId
-                authors
-                image
-                link
-                title
-                description
+            gameCount
+            savedGames {
+              name
+              gameId
+              rating
+              ratings_count
+              image
+              esrb
             }
         }
 }
