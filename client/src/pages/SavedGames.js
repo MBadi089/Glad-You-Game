@@ -12,7 +12,7 @@ const SavedGames = () => {
     const [removeGame] = useMutation(REMOVE_GAME);
     const userData = data?.me || [];
 
-    //create function that accepts the game's mongo_id value as param and deletes the book from the database
+    //create function that accepts the game's mongo_id value as param and deletes the game from the database
     const handleDeleteGame = async (gameId) => {
         const token = Auth.loggedIn() ? Auth.getToken() : null;
 
@@ -26,7 +26,7 @@ const SavedGames = () => {
             })
 
             //up success, remove game's id from localStorage
-            removeGameId(bookId);
+            removeGameId(gameId);
         } catch (e) {
             console.error(e);
         }

@@ -77,7 +77,7 @@ const SearchGames = () => {
         try {
             const { data } = await saveGame({variables: {gameBody: gameToSave}});
 
-            //if book successfully saves to user's account, save book id to state
+            //if game successfully saves to user's account, save game id to state
             setSavedGameIds([...savedGameIds, gameToSave.gameId]);
         } catch (err) {
             console.error(err);
