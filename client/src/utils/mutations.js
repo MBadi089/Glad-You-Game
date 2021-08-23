@@ -75,4 +75,3 @@ export const REMOVE_GAME = gql`
 }
 `;
 
-// generic comment
