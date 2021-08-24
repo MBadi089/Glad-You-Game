@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { useMutation } from '@apollo/react-hooks';
+import { useMutation } from '@apollo/client';
 import { Form, Button, Alert } from 'react-bootstrap';
 
-// import { createUser } from '../utils/API';
-import Auth from '../../utils/auth';
-import { ADD_USER } from '../../utils/mutations';
+import Auth from '../utils/auth';
+import { ADD_USER } from '../utils/mutations';
 
 const SignupForm = () => {
   // set initial form state

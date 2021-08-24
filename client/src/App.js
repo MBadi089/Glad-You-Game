@@ -1,13 +1,11 @@
 import React from 'react';
-// import SearchGames from './pages/SearchGames';
-// import SavedGames from './pages/SavedGames';
+import SearchGames from './pages/SearchGames';
+import SavedGames from './pages/SavedGames';
 import Navbar from './components/Nav';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-import Login from './components/Login';
-import Nav from './components/Nav';
-import Signup from './components/Signup';
+//import Background  from './components/Background';
 
 // establish a new link to the GraphQL server
 const httpLink = createHttpLink({
@@ -34,6 +32,7 @@ const client = new ApolloClient({
 });
 
 function App() {
+  console.info('what is client? ', client);
   return (
     <div>
       <Nav />
