@@ -5,7 +5,9 @@ import Auth from '../utils/auth';
 import { SAVE_GAME } from '../utils/mutations';
 import { useMutation } from '@apollo/client';
 import { saveGameIds, getSavedGameIds } from '../utils/localStorage';
-import SearchStyles from './'
+
+// css
+import './SearchStyles.css';
 
 const APIKey = 'af988673270a4b798f8ffffb132779ce'; //rawg api key
 const urlGetGameList = 'https://api.rawg.io/api/games?key=';

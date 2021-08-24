@@ -6,3 +6,10 @@ img {
   height: 500px;
   width: 500px;
 }
+
+body {
+  color: green;
+  background-color: orange;
+  display: flex;
+  justify-content: space-between;
+}
