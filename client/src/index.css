@@ -18,6 +18,8 @@ body {
   justify-content: space-evenly;
 }
 
-.searchCSS {
-  padding-top: 10%;
+.container-fluid {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
 }
