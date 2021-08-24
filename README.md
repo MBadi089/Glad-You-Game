@@ -17,6 +17,11 @@ Search for games, view their data, log in and save games to your own profile and
 ## License
 This repository is licensed under the Unlicense license.
 ## Contributing
+Rawg for the database
+https://rawg.io/
+API URL used:
+https://api.rawg.io/api/games
+&
 Email any of us!
 
 ## Questions
