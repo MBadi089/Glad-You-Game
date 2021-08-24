@@ -59,11 +59,11 @@ const resolvers = {
       throw new AuthenticationError('You need to be logged in!');
     },
 
-    saveGame: async (parent, { gameBody } , context) => {
+    saveGame: async (parent, { gameData } , context) => {
       if (context.user) {
         const updatedUser = await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $push: { savedGames: gameBody } },
+          { $push: { savedGames: gameData } },
           { new: true, runValidators: true }
         );
 

@@ -19,3 +19,24 @@ export const GET_ME = gql`
     }
   }
 `;
+
+export const GET_GAME = gql`
+query game($gameId: String!) {
+  game(gameId: $gameId) {
+    gameId
+    name
+    description
+    image
+    rating
+    ratings_count
+    esrb
+    reviewCount
+    reviews {
+      _id
+      createdAt
+      username
+      reviewBody
+    }
+  }
+}
+`;
