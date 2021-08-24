@@ -7,23 +7,6 @@ img {
   width: 500px;
 }
 
-<<<<<<< HEAD
-/* body {
-  background-color: black;
-}
-body {
-  background-color: #1A1A2E;
-  background-image: url('./images/background.png');
-  background-repeat: no-repeat;
-  background-size: 100%;
-  background-attachment: fixed;
-}
-
-.navbar {
-  background-color:#142850;
-}
-*/
-=======
 body {
   color: white;
   background-image: url('https://wallpaperaccess.com/full/897502.png');
@@ -38,4 +21,3 @@ body {
 .searchCSS {
   padding-top: 10%;
 }
->>>>>>> 032527d5761b3308fc380f08969af598e6bc0b63
