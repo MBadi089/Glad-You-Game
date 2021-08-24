@@ -10,3 +10,14 @@ img {
 body {
   background-color: black;
 }
+body {
+  background-color: #1A1A2E;
+  background-image: url('./images/background.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-attachment: fixed;
+}
+
+.navbar {
+  background-color:#142850;
+}
