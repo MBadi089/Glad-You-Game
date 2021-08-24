@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Jumbotron, Container, Col, Form, Button, Card, CardColumns } from 'react-bootstrap';
-
+import { Link } from 'react-router-dom';
 import Auth from '../utils/auth';
 import { SAVE_GAME } from '../utils/mutations';
 import { useMutation } from '@apollo/client';
 import { saveGameIds, getSavedGameIds } from '../utils/localStorage';
 
-const APIKey = 'af988673270a4b798f8ffffb132779ce'; //rawg api key
+const APIKey = '25198db3b3bd453688731c9006f81b4e'; //rawg api key
 const urlGetGameList = 'https://api.rawg.io/api/games?key=';
+
+//adding a comment to see if everyone is up to date part 2
 
 const SearchGames = () => {
     const [saveGame] = useMutation(SAVE_GAME);
@@ -36,25 +38,27 @@ const SearchGames = () => {
 
         try {
             //this is where the api https link will go
-            const response = await fetch(urlGetGameList + APIKey +`&search=` + `${searchInput}`); 
+            const response = await fetch(`${urlGetGameList}${APIKey}&search=${searchInput}`); 
             console.log(response);
 
             if (!response.ok){
                 throw new Error('something went wrong!');
             }
 
-            const { items } = await response.json();
+            const { results } = await response.json();
+            console.log(results)
 
-            const gameData = items.map((game) => ({
+            const gameResults = results.map(game => ({
                 gameId: game.id,
                 name: game.name,
                 image: game.background_image,
                 rating: game.rating,
                 ratings_count: game.ratings_count,
-                esrb: game.esrb_rating.name
+                esrb: game.esrb_rating?.name || 'Not Specified'
             }));
 
-            setSearchedGames(gameData);
+            setSearchedGames(gameResults);
+            console.log(searchedGames)
             setSearchInput('');
         } catch (err) {
             console.error(err);
@@ -75,7 +79,7 @@ const SearchGames = () => {
         }
 
         try {
-            const { data } = await saveGame({variables: {gameData: gameToSave}});
+            await saveGame({variables: {gameData: gameToSave}});
 
             //if game successfully saves to user's account, save game id to state
             setSavedGameIds([...savedGameIds, gameToSave.gameId]);
@@ -87,8 +91,8 @@ const SearchGames = () => {
     return (
         <>
           <Jumbotron fluid className='text-light bg-dark'>
-            <Container>
-              <h1>Search for Games!</h1>
+            <Container class='searchCSS'>
+              <h1>Search 500,00+ Games To View Ratings and Save Them To Your Collection!</h1>
               <Form onSubmit={handleFormSubmit}>
                 <Form.Row>
                   <Col xs={12} md={8}>
@@ -98,12 +102,12 @@ const SearchGames = () => {
                       onChange={(e) => setSearchInput(e.target.value)}
                       type='text'
                       size='lg'
-                      placeholder='Search for a game'
+                      placeholder='Search For A Game Here'
                     />
                   </Col>
                   <Col xs={12} md={4}>
                     <Button type='submit' variant='success' size='lg'>
-                      Submit Search
+                      Submit
                     </Button>
                   </Col>
                 </Form.Row>
@@ -115,7 +119,7 @@ const SearchGames = () => {
             <h2>
               {searchedGames.length
                 ? `Viewing ${searchedGames.length} results:`
-                : 'Search for a game to begin'}
+                : ''}
             </h2>
             <CardColumns>
               {searchedGames.map((game) => {
@@ -126,9 +130,7 @@ const SearchGames = () => {
                     ) : null}
                     <Card.Body>
                       <Card.Title>{game.name}</Card.Title>
-                      <Card.Text>Rating: {game.esrb}</Card.Text>
-                      <Card.Text>Average Score: {game.rating} <span>From {game.ratings_count} ratings</span></Card.Text>
-                      {/* <Card.Text>{game.description}</Card.Text> */}
+                      <Link to={`/${game.gameId}`}>See More</Link>
                       {Auth.loggedIn() && (
                         <Button
                           disabled={savedGameIds?.some((savedGameId) => savedGameId === game.gameId)}
