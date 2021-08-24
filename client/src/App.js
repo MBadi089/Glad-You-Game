@@ -35,7 +35,6 @@ function App() {
   console.info('what is client? ', client);
   return (
     <div>
-      <Nav />
     <ApolloProvider client={client}>
       <Router>
       <>

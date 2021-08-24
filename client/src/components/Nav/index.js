@@ -11,8 +11,11 @@ const AppNavbar = () => {
 
   return (
     <div style={{display: 'flex', justifyContent: 'space-between'}}>
-      <div>
-        App Name
+      <div id= "logo">
+        <a href= "/"> </a>
+        <h1>
+          Glad You Game 
+        </h1>
       </div>
       <LoginForm/>
       {/* <div>
