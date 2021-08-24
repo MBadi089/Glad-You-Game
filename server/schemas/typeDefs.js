@@ -7,6 +7,7 @@ const typeDefs = gql`
     email: String
     gameCount: Int
     savedGames: [Game]
+    reviews: [Review]
   }
 
   type Game {
@@ -17,7 +18,6 @@ const typeDefs = gql`
     rating: Int
     ratings_count: Int
     esrb: String
-    reviewCount: Int
     reviews: [Review]
   }
 
@@ -36,11 +36,9 @@ const typeDefs = gql`
     rating: Int
     ratings_count: Int
     esrb: String
-<<<<<<< HEAD
-=======
     reviews: [ReviewInput]
->>>>>>> main
   }
+
   type Review {
     _id: ID
     reviewBody: String
@@ -62,7 +60,7 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
     addReview(gameId: String!, reviewBody: String!): Game
-    saveGame(gameData: GameInput!): User
+    saveGame(gameBody: GameInput!): User
     removeGame(gameId: String!): User
   }
 `;
