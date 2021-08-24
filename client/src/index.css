@@ -8,8 +8,16 @@ img {
 }
 
 body {
-  color: green;
-  background-color: orange;
+  color: white;
+  background-image: url('https://wallpaperaccess.com/full/897502.png');
+  background-size: 100%;
+  background-attachment: fixed;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+}
+
+.searchCSS {
+  padding-top: 10%;
 }
