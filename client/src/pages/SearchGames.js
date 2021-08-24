@@ -6,8 +6,8 @@ import { SAVE_GAME } from '../utils/mutations';
 import { useMutation } from '@apollo/client';
 import { saveGameIds, getSavedGameIds } from '../utils/localStorage';
 
-const APIKey = 'key=af988673270a4b798f8ffffb132779ce'; //rawg api key
-const urlGetGameList = 'https://api.rawg.io/api/games?';
+const APIKey = 'af988673270a4b798f8ffffb132779ce'; //rawg api key
+const urlGetGameList = 'https://api.rawg.io/api/games?key=';
 
 const SearchGames = () => {
     const [saveGame] = useMutation(SAVE_GAME);
