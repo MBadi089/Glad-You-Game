@@ -9,6 +9,8 @@ import { saveGameIds, getSavedGameIds } from '../utils/localStorage';
 const APIKey = 'af988673270a4b798f8ffffb132779ce'; //rawg api key
 const urlGetGameList = 'https://api.rawg.io/api/games?key=';
 
+//adding a comment to see if everyone is up to date
+
 const SearchGames = () => {
     const [saveGame] = useMutation(SAVE_GAME);
 
@@ -90,7 +92,7 @@ const SearchGames = () => {
         <>
           <Jumbotron fluid className='text-light bg-dark'>
             <Container>
-              <h1>Search for Games!</h1>
+              <h1>Search 500,00+ Games To View Ratings and Save Them To Your Collection!</h1>
               <Form onSubmit={handleFormSubmit}>
                 <Form.Row>
                   <Col xs={12} md={8}>
@@ -100,12 +102,12 @@ const SearchGames = () => {
                       onChange={(e) => setSearchInput(e.target.value)}
                       type='text'
                       size='lg'
-                      placeholder='Search for a game'
+                      placeholder='Search For A Game Here'
                     />
                   </Col>
                   <Col xs={12} md={4}>
                     <Button type='submit' variant='success' size='lg'>
-                      Submit Search
+                      Submit
                     </Button>
                   </Col>
                 </Form.Row>
@@ -117,7 +119,7 @@ const SearchGames = () => {
             <h2>
               {searchedGames.length
                 ? `Viewing ${searchedGames.length} results:`
-                : 'Search for a game to begin'}
+                : ''}
             </h2>
             <CardColumns>
               {searchedGames.map((game) => {
