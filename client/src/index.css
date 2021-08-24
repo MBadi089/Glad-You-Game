@@ -7,6 +7,7 @@ img {
   width: 500px;
 }
 
+<<<<<<< HEAD
 /* body {
   background-color: black;
 }
@@ -22,3 +23,19 @@ body {
   background-color:#142850;
 }
 */
+=======
+body {
+  color: white;
+  background-image: url('https://wallpaperaccess.com/full/897502.png');
+  background-size: 100%;
+  background-attachment: fixed;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+}
+
+.searchCSS {
+  padding-top: 10%;
+}
+>>>>>>> 032527d5761b3308fc380f08969af598e6bc0b63

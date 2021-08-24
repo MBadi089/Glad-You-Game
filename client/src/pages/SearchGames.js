@@ -91,7 +91,7 @@ const SearchGames = () => {
     return (
         <>
           <Jumbotron fluid className='text-light bg-dark'>
-            <Container>
+            <Container class='searchCSS'>
               <h1>Search 500,00+ Games To View Ratings and Save Them To Your Collection!</h1>
               <Form onSubmit={handleFormSubmit}>
                 <Form.Row>
