@@ -7,8 +7,9 @@ img {
   width: 500px;
 }
 
-body {
+/* body {
   background-color: black;
+<<<<<<< HEAD
 }
 body {
   background-color: #1A1A2E;
@@ -21,3 +22,6 @@ body {
 .navbar {
   background-color:#142850;
 }
+=======
+} */
+>>>>>>> db51fdeccf33cc5a81791b939aaa58205c317764
