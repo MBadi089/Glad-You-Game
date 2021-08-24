@@ -130,8 +130,8 @@ const SearchGames = () => {
                     ) : null}
                     <Card.Body>
                       <Card.Title>{game.name}</Card.Title>
-                      <Card.Text>Rating: {game.esrb}</Card.Text>
-                      <Card.Text>Average Score: {game.rating} <span>From {game.ratings_count} ratings</span></Card.Text>
+                      {/* <Card.Text>Rating: {game.esrb}</Card.Text>
+                      <Card.Text>Average Score: {game.rating} <span>From {game.ratings_count} ratings</span></Card.Text> */}
                       {/* <Card.Text>{game.description}</Card.Text> */}
                       <Link to={`/${game.gameId}`}>See More</Link>
                       {Auth.loggedIn() && (
