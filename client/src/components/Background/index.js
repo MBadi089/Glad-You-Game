@@ -1,9 +1,13 @@
-import React from "react";
+// import React from "react";
 
-function Background() {
-    return (
-        <div className="background"></div>
-    );
-}
+// var imageStyling = {
+//     backgroundImage: `url('https://wallpaperaccess.com/full/897502.png')`
+//  }
 
-export default Background;
+// function Background() {
+//     return (
+//         <div style={imageStyling}></div>
+//     );
+// }
+
+// export default Background;
