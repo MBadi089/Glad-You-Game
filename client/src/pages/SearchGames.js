@@ -36,25 +36,27 @@ const SearchGames = () => {
 
         try {
             //this is where the api https link will go
-            const response = await fetch(urlGetGameList + APIKey +`&search=` + `${searchInput}`); 
+            const response = await fetch(`${urlGetGameList}${APIKey}&search=${searchInput}`); 
             console.log(response);
 
             if (!response.ok){
                 throw new Error('something went wrong!');
             }
 
-            const { items } = await response.json();
+            const { results } = await response.json();
+            console.log(results)
 
-            const gameData = items.map((game) => ({
+            const gameResults = results.map(game => ({
                 gameId: game.id,
                 name: game.name,
                 image: game.background_image,
                 rating: game.rating,
                 ratings_count: game.ratings_count,
-                esrb: game.esrb_rating.name
+                esrb: game.esrb_rating?.name || 'Not Specified'
             }));
 
-            setSearchedGames(gameData);
+            setSearchedGames(gameResults);
+            console.log(searchedGames)
             setSearchInput('');
         } catch (err) {
             console.error(err);
@@ -75,7 +77,7 @@ const SearchGames = () => {
         }
 
         try {
-            const { data } = await saveGame({variables: {gameData: gameToSave}});
+            await saveGame({variables: {gameData: gameToSave}});
 
             //if game successfully saves to user's account, save game id to state
             setSavedGameIds([...savedGameIds, gameToSave.gameId]);
