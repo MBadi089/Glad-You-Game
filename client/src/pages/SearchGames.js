@@ -9,11 +9,8 @@ import { saveGameIds, getSavedGameIds } from '../utils/localStorage';
 const APIKey = 'af988673270a4b798f8ffffb132779ce'; //rawg api key
 const urlGetGameList = 'https://api.rawg.io/api/games?key=';
 
-<<<<<<< HEAD
-=======
 //adding a comment to see if everyone is up to date part 2
 
->>>>>>> 8477675f9f7d311e609cec8d272fe721b203ad77
 const SearchGames = () => {
     const [saveGame] = useMutation(SAVE_GAME);
 
