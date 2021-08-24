@@ -22,7 +22,7 @@ const SingleThought = () => {
     return <div>Loading...</div>;
   }
   
-  fetch(`https://api.rawg.io/api/games/${gameId}?key=af988673270a4b798f8ffffb132779ce`)
+  fetch(`https://api.rawg.io/api/games/${gameId}?key=25198db3b3bd453688731c9006f81b4e`)
   .then(response => {
     return response.json()
   })
