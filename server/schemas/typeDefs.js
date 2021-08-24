@@ -21,6 +21,13 @@ const typeDefs = gql`
     reviews: [Review]
   }
 
+  input ReviewInput {
+    _id: ID
+    reviewBody: String
+    username: String
+    createdAt: String
+  }
+
   input GameInput {
     gameId: String
     name: String
@@ -29,9 +36,8 @@ const typeDefs = gql`
     rating: Int
     ratings_count: Int
     esrb: String
-    reviews: [Review]
+    reviews: [ReviewInput]
   }
-
   type Review {
     _id: ID
     reviewBody: String
