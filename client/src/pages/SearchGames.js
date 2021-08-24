@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Jumbotron, Container, Col, Form, Button, Card, CardColumns } from 'react-bootstrap';
-
+import { Link } from 'react-router-dom';
 import Auth from '../utils/auth';
 import { SAVE_GAME } from '../utils/mutations';
 import { useMutation } from '@apollo/client';
 import { saveGameIds, getSavedGameIds } from '../utils/localStorage';
 
-const APIKey = 'af988673270a4b798f8ffffb132779ce'; //rawg api key
+const APIKey = '25198db3b3bd453688731c9006f81b4e'; //rawg api key
 const urlGetGameList = 'https://api.rawg.io/api/games?key=';
 
 //adding a comment to see if everyone is up to date part 2
@@ -130,9 +130,7 @@ const SearchGames = () => {
                     ) : null}
                     <Card.Body>
                       <Card.Title>{game.name}</Card.Title>
-                      <Card.Text>Rating: {game.esrb}</Card.Text>
-                      <Card.Text>Average Score: {game.rating} <span>From {game.ratings_count} ratings</span></Card.Text>
-                      {/* <Card.Text>{game.description}</Card.Text> */}
+                      <Link to={`/${game.gameId}`}>See More</Link>
                       {Auth.loggedIn() && (
                         <Button
                           disabled={savedGameIds?.some((savedGameId) => savedGameId === game.gameId)}
