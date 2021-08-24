@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
 import LoginForm from '../Login';
-// import SignupForm from '../Signup';
+import SignUpForm from '../Signup';
 import Auth from '../../utils/auth';
 
 const AppNavbar = () => {
@@ -68,12 +68,12 @@ const AppNavbar = () => {
           </Modal.Header>
           <Modal.Body>
             <Tab.Content>
-              {/* <Tab.Pane eventKey='login'>
+              <Tab.Pane eventKey='login'>
                 <LoginForm handleModalClose={() => setShowModal(false)} />
               </Tab.Pane>
               <Tab.Pane eventKey='signup'>
                 <SignUpForm handleModalClose={() => setShowModal(false)} />
-              </Tab.Pane> */}
+              </Tab.Pane>
             </Tab.Content>
           </Modal.Body>
         </Tab.Container>
