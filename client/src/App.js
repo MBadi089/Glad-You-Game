@@ -5,6 +5,7 @@ import Navbar from './components/Nav';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
+import SingleGame from './pages/SingleGame';
 //import Background  from './components/Background';
 
 // establish a new link to the GraphQL server
@@ -41,6 +42,7 @@ function App() {
         <Switch>
           <Route exact path='/' component={SearchGames} />
           <Route exact path='/saved' component={SavedGames} />
+          <Route exact path='/:gameId' component={SingleGame} />
           <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
         </Switch>
       </>
