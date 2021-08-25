@@ -57,7 +57,7 @@ const LoginForm = () => {
             value={userFormData.email}
             required
           />
-          <Form.Control.Feedback class= 'text-Modal' type='invalid'>*Email is required</Form.Control.Feedback>
+          <Form.Control.Feedback className= 'text-Modal' type='invalid'>*Email is required</Form.Control.Feedback>
         </Form.Group>
 
         <Form.Group>

@@ -94,8 +94,8 @@ const SearchGames = () => {
           <Jumbotron fluid className='text-light bg-dark'>
             <Container className='searchCSS'>
               <h2>Search 500,000+ Games To View Ratings and Save Them To Your Collection!</h2>
-              <Form class='searchButtonCSS'onSubmit={handleFormSubmit}>
-                <Form.Row class='searchForm'>
+              <Form className='searchButtonCSS'onSubmit={handleFormSubmit}>
+                <Form.Row className='searchForm'>
                   <Col xs={12} md={8}>
                     <Form.Control
                       name='searchInput'

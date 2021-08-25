@@ -28,7 +28,7 @@ const AppNavbar = () => {
     <Navbar bg='primary' variant='dark' expand='lg'>
         <Container fluid>
           <Navbar.Brand as={Link} to='/'>
-            {/* <img class="logo" src={logo} alt="logo"></img> */}
+            {/* <img className="logo" src={logo} alt="logo"></img> */}
             <img src={logo} alt="logo"></img>Glad You Game 
           </Navbar.Brand>
           

@@ -43,7 +43,7 @@ const SingleThought = () => {
   return (
     <div>
       <Link to="/">← Back</Link>
-      <div class="card">
+      <div className="card">
       <h2>{currentGame.name}</h2>
       <img
         src={currentGame.image}
