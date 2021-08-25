@@ -37,6 +37,7 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
       <>
+      {/* <Header /> */}
       <Navbar />
         <Switch>
           <Route exact path='/' component={SearchGames} />

@@ -5,7 +5,7 @@ import LoginForm from '../Login';
 import SignUpForm from '../Signup';
 import Auth from '../../utils/auth';
 import "./nav.css";
-import logo from '../../images/logo.png';
+import logo from './logo.png';
 
 const AppNavbar = () => {
   // set modal display state
@@ -27,7 +27,7 @@ const AppNavbar = () => {
         <Container fluid>
           <Navbar.Brand as={Link} to='/'>
             {/* <img class="logo" src={logo} alt="logo"></img> */}
-            Glad You Game
+            <img src={logo} alt="logo"></img>Glad You Game 
           </Navbar.Brand>
           
           
