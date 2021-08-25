@@ -45,44 +45,55 @@ const AppNavbar = () => {
                   <Nav.Link onClick={Auth.logout} className="nav-link">Logout</Nav.Link>
                 </>
               ) : (
-                <Nav.Link className="nav-link" onClick={() => setShowModal(true)}>Login</Nav.Link>
-              )}
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
+                <Nav.Link onClick={() => setShowModal(true)}>Login/Signup</Nav.Link>
+                )}
+                </Nav>
+                </Navbar.Collapse>
+                </Container>
+  </Navbar>
 
-      {/* set modal data up */}
-      <Modal
-        className="modal"
-        size='lg'
-        show={showModal}
-        onHide={() => setShowModal(false)}
-        aria-labelledby='signup-modal'>
-        {/* tab container to do either signup or login component */}
-        <Tab.Container defaultActiveKey='login'>
-          <Modal.Header closeButton>
-            <Modal.Title id='signup-modal'>
-              <Nav variant='pills'>
-                <Nav.Item>
-                  <Nav.Link eventKey='login'>Login</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link eventKey='signup'>Sign Up</Nav.Link>
-                </Nav.Item>
-              </Nav>
-            </Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <Tab.Content>
-              <Tab.Pane eventKey='login'>
-                <LoginForm handleModalClose={() => setShowModal(false)} />
-              </Tab.Pane>
-              <Tab.Pane eventKey='signup'>
-                <SignUpForm handleModalClose={() => setShowModal(false)} />
-              </Tab.Pane>
-            </Tab.Content>
-          </Modal.Body>
+  {/* set modal data up */}
+  <Modal
+  size='lg'
+  show={showModal}
+  onHide={() => setShowModal(false)}
+  aria-labelledby='signup-modal'>
+  {/* tab container to do either signup or login component */}
+
+
+
+  <Tab.Container defaultActiveKey='login'>
+  <Row>
+  <Col sm={3}>
+  <Modal.Header closeButton>
+  <Modal.Title id='signup-modal'>
+  {/* <Nav variant='pills'>
+  <Nav.Item>
+  <Nav.Link eventKey='login'>Login</Nav.Link>
+  </Nav.Item>
+  <Nav.Item>
+  <Nav.Link eventKey='signup'>Sign Up</Nav.Link>
+  </Nav.Item>
+  </Nav> */}
+
+  </Modal.Title>
+  </Modal.Header>
+  </Col>
+  <Col sm={9}>
+  <Modal.Body>
+          <Tab.Content>
+          <Tab.Pane eventKey='login'>
+            <LoginForm handleModalClose={() => setShowModal(false)} />
+          </Tab.Pane>
+
+          <Button variant="primary">Signup</Button>{' '}
+          {/* <Tab.Pane eventKey='signup'>
+          <SignUpForm handleModalClose={() => setShowModal(false)} />
+          </Tab.Pane> */}
+        </Tab.Content>
+  </Modal.Body>
+    </Col>
+  </Row>
         </Tab.Container>
       </Modal>
     </header>
