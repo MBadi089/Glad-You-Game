@@ -39,13 +39,13 @@ const AppNavbar = () => {
               {/* if user is logged in show saved games and logout */}
               {Auth.loggedIn() ? (
                 <>
-                  <Nav.Link as={Link} to='/saved'>
+                  <Nav.Link as={Link} to='/saved' className="nav-link">
                     Saved Games
                   </Nav.Link>
-                  <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
+                  <Nav.Link onClick={Auth.logout} className="nav-link">Logout</Nav.Link>
                 </>
               ) : (
-                <Nav.Link onClick={() => setShowModal(true)}>Login</Nav.Link>
+                <Nav.Link className="nav-link" onClick={() => setShowModal(true)}>Login</Nav.Link>
               )}
             </Nav>
           </Navbar.Collapse>
@@ -54,6 +54,7 @@ const AppNavbar = () => {
 
       {/* set modal data up */}
       <Modal
+        className="modal"
         size='lg'
         show={showModal}
         onHide={() => setShowModal(false)}
