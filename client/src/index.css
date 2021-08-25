@@ -61,7 +61,11 @@ a {
 }
 
 a:hover {
-  font-style: italic;
+  font-style: normal;
+}
+
+.form-control {
+  border-radius: 10px;
 }
 
 button {
