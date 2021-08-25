@@ -6,7 +6,7 @@ import { SAVE_GAME } from '../utils/mutations';
 import { useMutation } from '@apollo/client';
 import { saveGameIds, getSavedGameIds } from '../utils/localStorage';
 
-const APIKey = '25198db3b3bd453688731c9006f81b4e'; //rawg api key
+const APIKey = '16667b48fd9647ccbc16de3d49ddc40e'; //rawg api key
 const urlGetGameList = 'https://api.rawg.io/api/games?key=';
 
 //adding a comment to see if everyone is up to date part 2
@@ -91,9 +91,9 @@ const SearchGames = () => {
     return (
         <>
           <Jumbotron fluid className='text-light bg-dark'>
-            <Container class='searchCSS'>
+            <Container className='searchCSS'>
               <h1>Search 500,00+ Games To View Ratings and Save Them To Your Collection!</h1>
-              <Form onSubmit={handleFormSubmit}>
+              <Form class='searchButtonCSS'onSubmit={handleFormSubmit}>
                 <Form.Row>
                   <Col xs={12} md={8}>
                     <Form.Control
@@ -102,7 +102,7 @@ const SearchGames = () => {
                       onChange={(e) => setSearchInput(e.target.value)}
                       type='text'
                       size='lg'
-                      placeholder='Search For A Game Here'
+                      placeholder='Search a Game!'
                     />
                   </Col>
                   <Col xs={12} md={4}>

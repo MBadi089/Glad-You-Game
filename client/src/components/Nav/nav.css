@@ -1,0 +1,26 @@
+/*.Nav {
+    background-color: #142850;
+    top: 0;
+    width: 100%;
+}
+*/
+.modal {
+    width: 50%;
+    height: 80%;
+    top: 0;
+    position: fixed;
+    background-color: #142850;
+    border: 1px solid white;
+    transition: 1.0s ease-in-out;
+    box-shadow: turquoise;
+
+}
+
+.modal-body {
+    position: center;
+}
+
+.img {
+    size: 20;
+    float: left;
+}

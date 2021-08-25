@@ -8,7 +8,7 @@ import Auth from '../utils/auth';
 import { Link } from 'react-router-dom';
 
 const SingleThought = () => {
-  const { gameId: gameId } = useParams();
+  const { gameId } = useParams();
 
   const [currentGame, setCurrentGame] = useState({});
 
@@ -22,7 +22,7 @@ const SingleThought = () => {
     return <div>Loading...</div>;
   }
   
-  fetch(`https://api.rawg.io/api/games/${gameId}?key=25198db3b3bd453688731c9006f81b4e`)
+  fetch(`https://api.rawg.io/api/games/${gameId}?key=16667b48fd9647ccbc16de3d49ddc40e`)
   .then(response => {
     return response.json()
   })
@@ -44,7 +44,7 @@ const SingleThought = () => {
     <div>
       <Link to="/">← Back</Link>
       <h2>{currentGame.name}</h2>
-      <img src={currentGame.image} alt={`an image from the game ${currentGame.name}`}/>
+      <img src={currentGame.image} alt={`a screenshot from the game ${currentGame.name}`}/>
       <h3>Score: {currentGame.rating} from {currentGame.ratings_count} reviews</h3>
       <h3>Rating: {currentGame.esrb}</h3>
       <p>{currentGame.description}</p>
