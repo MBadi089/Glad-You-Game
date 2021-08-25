@@ -68,3 +68,22 @@ export const REMOVE_GAME = gql`
 }
 `;
 
+export const ADD_REVIEW = gql`
+  mutation addReview($gameId: String!, $reviewBody: String!) {
+    addReview(gameId: $gameId, reviewBody: $reviewBody) {
+      gameId
+      name
+      image
+      rating
+      ratings_count
+      esrb
+      reviewCount
+      reviews {
+        _id
+        reviewBody
+        createdAt
+        username
+      }
+    }
+  }
+`;
