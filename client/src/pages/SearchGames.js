@@ -5,7 +5,12 @@ import Auth from '../utils/auth';
 import { SAVE_GAME } from '../utils/mutations';
 import { useMutation } from '@apollo/client';
 import { saveGameIds, getSavedGameIds } from '../utils/localStorage';
+<<<<<<< HEAD
 import './search.css';
+=======
+import { gameArray } from '../components/Seeds';
+
+>>>>>>> 4531582632a6b67cfa0e57c08fa55b170d4d1364
 const APIKey = '16667b48fd9647ccbc16de3d49ddc40e'; //rawg api key
 const urlGetGameList = 'https://api.rawg.io/api/games?key=';
 
@@ -37,28 +42,27 @@ const SearchGames = () => {
         // }
 
         try {
-            //this is where the api https link will go
-            const response = await fetch(`${urlGetGameList}${APIKey}&search=${searchInput}`); 
-            console.log(response);
+            // const response = await fetch(`${urlGetGameList}${APIKey}&search=${searchInput}`); 
+            // console.log(response);
 
-            if (!response.ok){
-                throw new Error('something went wrong!');
-            }
+            // if (!response.ok){
+            //     throw new Error('something went wrong!');
+            // }
 
-            const { results } = await response.json();
-            console.log(results)
+            // const { results } = await response.json();
+            // console.log(results)
 
-            const gameResults = results.map(game => ({
-                gameId: game.id,
-                name: game.name,
-                image: game.background_image,
-                rating: game.rating,
-                ratings_count: game.ratings_count,
-                esrb: game.esrb_rating?.name || 'Not Specified'
-            }));
+            // const gameResults = results.map(game => ({
+            //     gameId: game.id,
+            //     name: game.name,
+            //     image: game.background_image,
+            //     rating: game.rating,
+            //     ratings_count: game.ratings_count,
+            //     esrb: game.esrb_rating?.name || 'Not Specified'
+            // }));
 
-            setSearchedGames(gameResults);
-            console.log(searchedGames)
+            // setSearchedGames(gameResults);
+            setSearchedGames(gameArray);
             setSearchInput('');
         } catch (err) {
             console.error(err);
@@ -115,22 +119,30 @@ const SearchGames = () => {
             </Container>
           </Jumbotron>
     
-          <Container>
-            <h2>
-              {searchedGames.length
-                ? `Viewing ${searchedGames.length} results:`
-                : ''}
-            </h2>
+          <h2>
+            {searchedGames.length
+              ? `Viewing ${searchedGames.length} results:`
+              : ''}
+          </h2>
+          <Container className="result-list">
             <CardColumns>
               {searchedGames.map((game) => {
                 return (
-                  <Card key={game.gameId} border='dark'>
-                    {game.image ? (
-                      <Card.Img src={game.image} alt={`The cover for ${game.title}`} variant='top' />
-                    ) : null}
+                  <Card key={game.gameId} className="gameCard">
                     <Card.Body>
+                    <Link to={`/${game.gameId}`}>
                       <Card.Title>{game.name}</Card.Title>
-                      <Link to={`/${game.gameId}`}>See More</Link>
+                    <br/>
+                    {game.image ? (
+                      <Card.Img
+                        src={game.image}
+                        alt={`The cover for ${game.title}`}
+                        variant='top'
+                        className="card-img"
+                      />
+                    ) : null}
+                    </Link>
+                    <br />
                       {Auth.loggedIn() && (
                         <Button
                           disabled={savedGameIds?.some((savedGameId) => savedGameId === game.gameId)}

@@ -45,6 +45,7 @@ const ReviewForm = ({ gameId }) => {
           className="form-input col-12 col-md-9"
           onChange={handleChange}
         />
+        <br />
         <button className="btn col-12 col-md-3" type="submit">
           Submit
         </button>

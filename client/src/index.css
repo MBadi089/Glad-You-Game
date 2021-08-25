@@ -2,7 +2,12 @@
   font-size: 30px;
 }
 
-img {
+.card-img {
+  height: 200px;
+  width: 200px;
+}
+
+.current-img {
   height: 500px;
   width: 500px;
 }
@@ -48,4 +53,42 @@ body {
 
 .tab-panel {
   background-color: black;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  font-style: italic;
+}
+
+button {
+  background-color: blue;
+  color: white;
+  margin-top: 20px;
+  border-radius: 10px;
+  width: 200px;
+}
+
+.modal {
+  background-color: lightslategray;
+  opacity: 0.6;
+}
+
+.gameCard {
+  display: inline-flex;
+  text-align: center;
+  width: 30%;
+  margin: 30px;
+}
+
+.result-list {
+  width: 100%;
+  text-align: center;
+}
+
+.nav-link {
+  margin: 20px;
 }
