@@ -11,7 +11,7 @@ This deployed web page(through heroku) showcases our team of 6's understanding o
 * [Tests](#tests)
 * [Questions](#questions)
 ## Website
-Please visit our website at:
+Please visit our website at: https://young-sierra-90065.herokuapp.com/
 ## Usage
 Search for games, view their data, log in and save games to your own profile and more!
 ## License
