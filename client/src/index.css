@@ -7,6 +7,34 @@ img {
   width: 500px;
 }
 
-/* body {
+.container-fluid {
+  background-color: #142850;
+  top: 0;
+  max-width: 100%;
+
+}
+body {
+  color: white;
+  background-image: url('https://wallpaperaccess.com/full/897502.png');
+  background-size: 100%;
+  background-attachment: fixed;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+}
+
+.container-fluid {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.modal-body {
+  background-color: #27496D;
+  text-align: center;
+}
+
+.tab-panel {
   background-color: black;
-} */
+}
