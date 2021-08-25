@@ -24,3 +24,14 @@
     size: 20;
     float: left;
 }
+
+.brand {
+background-color: black;
+position: relative;
+}
+
+img {
+    width: 75px;
+    height: 77px;
+    float: left;
+}

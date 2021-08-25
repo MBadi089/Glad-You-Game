@@ -5,7 +5,7 @@ import LoginForm from '../Login';
 import SignUpForm from '../Signup';
 import Auth from '../../utils/auth';
 import "./nav.css";
-import logo from '../../images/logo.png';
+import logo from './logo.png';
 import SignupForm from '../Signup';
 
 const AppNavbar = () => {
@@ -24,13 +24,14 @@ const AppNavbar = () => {
     //   </div> */}
     // </div>
     <>
-  <header>
+
     <Navbar bg='primary' variant='dark' expand='lg'>
         <Container fluid>
           <Navbar.Brand as={Link} to='/'>
             {/* <img class="logo" src={logo} alt="logo"></img> */}
-            Glad You Game
+            <img src={logo} alt="logo"></img>Glad You Game 
           </Navbar.Brand>
+          
           
           {/* <Navbar.Toggle aria-controls='navbar' /> */}
           <Navbar.Collapse id='navbar'>
@@ -153,9 +154,6 @@ const AppNavbar = () => {
           
         </Tab.Container>
       </Modal>
-
-    </header>
-
     </>
   );
 };

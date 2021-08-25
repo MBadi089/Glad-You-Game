@@ -7,7 +7,7 @@ import ReviewForm from '../components/ReviewForm';
 import Auth from '../utils/auth';
 import { Link } from 'react-router-dom';
 import { gameArray } from '../components/Seeds';
-
+import "./single.css";
 const SingleThought = () => {
   const { gameId } = useParams();
 
@@ -43,6 +43,7 @@ const SingleThought = () => {
   return (
     <div>
       <Link to="/">← Back</Link>
+      <div class="card">
       <h2>{currentGame.name}</h2>
       <img
         src={currentGame.image}
@@ -54,6 +55,7 @@ const SingleThought = () => {
       <p>{currentGame.description}</p>
       {game.reviewCount > 0 && <ReviewList reviews={game.reviews} />}
       {Auth.loggedIn() && <ReviewForm gameId={game.gameId} />}
+    </div>
     </div>
   );
 };
