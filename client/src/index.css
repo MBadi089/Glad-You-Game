@@ -1,5 +1,5 @@
 * {
-  font-size: 30px;
+  font-size: 20px;
 }
 
 .card-img {
@@ -13,7 +13,7 @@
 }
 
 .container-fluid {
-  background-color: #232E58;
+  background-color: #1c2a59;
   top: 0;
   max-width: 100%;
 }
@@ -47,7 +47,7 @@ body {
 }
 
 .modal-body {
-  background-color: #27496D;
+  background-color: #48588c;
   text-align: center;
 }
 
@@ -96,3 +96,4 @@ button {
 .nav-link {
   margin: 20px;
 }
+
