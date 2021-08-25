@@ -5,8 +5,8 @@
 }
 */
 .modal {
-    width: 50%;
-    height: 80%;
+    width: 40%;
+    height: 40%;
     top: 0;
     position: fixed;
     background-color: #142850;
@@ -22,5 +22,16 @@
 
 .img {
     size: 20;
+    float: left;
+}
+
+.brand {
+background-color: black;
+position: relative;
+}
+
+img {
+    width: 75px;
+    height: 77px;
     float: left;
 }

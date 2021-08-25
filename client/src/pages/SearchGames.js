@@ -5,6 +5,7 @@ import Auth from '../utils/auth';
 import { SAVE_GAME } from '../utils/mutations';
 import { useMutation } from '@apollo/client';
 import { saveGameIds, getSavedGameIds } from '../utils/localStorage';
+import './search.css';
 import { gameArray } from '../components/Seeds';
 
 const APIKey = '16667b48fd9647ccbc16de3d49ddc40e'; //rawg api key
@@ -92,9 +93,9 @@ const SearchGames = () => {
         <>
           <Jumbotron fluid className='text-light bg-dark'>
             <Container className='searchCSS'>
-              <h1>Search 500,00+ Games To View Ratings and Save Them To Your Collection!</h1>
-              <Form class='searchButtonCSS'onSubmit={handleFormSubmit}>
-                <Form.Row>
+              <h2>Search 500,000+ Games To View Ratings and Save Them To Your Collection!</h2>
+              <Form className='searchButtonCSS'onSubmit={handleFormSubmit}>
+                <Form.Row className='searchForm'>
                   <Col xs={12} md={8}>
                     <Form.Control
                       name='searchInput'
