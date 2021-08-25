@@ -6,7 +6,6 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import SingleGame from './pages/SingleGame';
-//import Background  from './components/Background';
 
 // establish a new link to the GraphQL server
 const httpLink = createHttpLink({
