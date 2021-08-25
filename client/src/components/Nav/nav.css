@@ -1,4 +1,21 @@
-.Nav {
-    background-color: Black;
-    padding: 0;
+/*.Nav {
+    background-color: #142850;
+    top: 0;
+    width: 100%;
+}
+*/
+.modal {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    position: fixed;
+    background-color: #142850;
+    border: 1px solid white;
+    transition: 1.1s ease-in-out;
+    box-shadow: turquoise;
+
+}
+
+.modal-body {
+    position: center;
 }
