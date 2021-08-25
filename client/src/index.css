@@ -11,8 +11,17 @@ img {
   background-color: #142850;
   top: 0;
   max-width: 100%;
-
 }
+
+.searchCSS {
+  padding: 1%;
+}
+
+/* .searchButtonCSS {
+  flex-wrap: nowrap;
+  display: inline;
+} */
+
 body {
   color: white;
   background-image: url('https://wallpaperaccess.com/full/897502.png');
@@ -27,7 +36,9 @@ body {
 .container-fluid {
   display: flex;
   flex-wrap: nowrap;
-  justify-content: space-between;
+  justify-content: space-around;
+  background-color: gray;
+  border-radius: 20px 20px;
 }
 
 .modal-body {
