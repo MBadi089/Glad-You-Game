@@ -1,0 +1,8 @@
+.searchCSS {
+    display: flex;
+    flex-direction: row;
+}
+.searchForm {
+    display: flex;
+    flex-direction: row;
+}
