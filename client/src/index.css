@@ -65,7 +65,7 @@ a:hover {
 }
 
 button {
-  background-color: blue;
+  background-color: #4a588c;
   color: white;
   margin-top: 20px;
   border-radius: 10px;
@@ -74,7 +74,7 @@ button {
 
 .modal {
   background-color: lightslategray;
-  opacity: 0.6;
+  /* opacity: 0.6; */
 }
 
 .gameCard {
