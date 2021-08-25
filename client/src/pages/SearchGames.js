@@ -92,7 +92,7 @@ const SearchGames = () => {
         <>
           <Jumbotron fluid className='text-light bg-dark'>
             <Container className='searchCSS'>
-              <h2>Search 500,00+ Games To View Ratings and Save Them To Your Collection!</h2>
+              <h2>Search 500,000+ Games To View Ratings and Save Them To Your Collection!</h2>
               <Form class='searchButtonCSS'onSubmit={handleFormSubmit}>
                 <Form.Row class='searchForm'>
                   <Col xs={12} md={8}>

@@ -24,3 +24,8 @@
     size: 20;
     float: left;
 }
+
+.brand {
+background-color: black;
+position: relative;
+}

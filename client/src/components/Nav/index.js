@@ -22,13 +22,14 @@ const AppNavbar = () => {
     //   </div> */}
     // </div>
     <>
-  <header>
+
     <Navbar bg='primary' variant='dark' expand='lg'>
         <Container fluid>
           <Navbar.Brand as={Link} to='/'>
             {/* <img class="logo" src={logo} alt="logo"></img> */}
             Glad You Game
           </Navbar.Brand>
+          
           
           {/* <Navbar.Toggle aria-controls='navbar' /> */}
           <Navbar.Collapse id='navbar'>
@@ -84,7 +85,6 @@ const AppNavbar = () => {
           </Modal.Body>
         </Tab.Container>
       </Modal>
-    </header>
 
     </>
   );
