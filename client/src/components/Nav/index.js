@@ -4,6 +4,8 @@ import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
 import LoginForm from '../Login';
 import SignUpForm from '../Signup';
 import Auth from '../../utils/auth';
+import "./nav.css";
+import logo from '../../images/logo.png';
 
 const AppNavbar = () => {
   // set modal display state
@@ -20,12 +22,15 @@ const AppNavbar = () => {
     //   </div> */}
     // </div>
     <>
+  <header>
     <Navbar bg='primary' variant='dark' expand='lg'>
         <Container fluid>
           <Navbar.Brand as={Link} to='/'>
+            {/* <img class="logo" src={logo} alt="logo"></img> */}
             Glad You Game
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls='navbar' />
+          
+          {/* <Navbar.Toggle aria-controls='navbar' /> */}
           <Navbar.Collapse id='navbar'>
             <Nav className='ml-auto'>
               {/* <Nav.Link as={Link} to='/'>
@@ -46,6 +51,7 @@ const AppNavbar = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
+
       {/* set modal data up */}
       <Modal
         size='lg'
@@ -78,6 +84,8 @@ const AppNavbar = () => {
           </Modal.Body>
         </Tab.Container>
       </Modal>
+    </header>
+
     </>
   );
 };
