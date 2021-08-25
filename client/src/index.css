@@ -8,7 +8,7 @@ img {
 }
 
 .container-fluid {
-  background-color: #142850;
+  background-color: #232E58;
   top: 0;
   max-width: 100%;
 }
@@ -37,7 +37,7 @@ body {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-around;
-  background-color: gray;
+  background-color: #9C99B5;
   border-radius: 20px 20px;
 }
 
