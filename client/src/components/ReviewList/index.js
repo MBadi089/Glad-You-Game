@@ -1,6 +1,9 @@
 import React from 'react';
 
 const ReviewList = ({ reviews }) => {
+  if (!reviews.length) {
+    return <h4>Be the first to write a review!</h4>
+  }
   return (
     <div className="card mb-3">
       <div className="card-header">

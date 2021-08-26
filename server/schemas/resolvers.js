@@ -46,6 +46,7 @@ const resolvers = {
     },
 
     addReview: async(parent, { gameId, reviewBody }, context) => {
+      console.log('addReview')
       if (context.user) {
         const updatedGame = await Game.findOneAndUpdate(
           { gameId: gameId },

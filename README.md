@@ -8,7 +8,6 @@ This deployed web page(through heroku) showcases our team of 6's understanding o
 * [Usage](#usage)
 * [License](#license)
 * [Contributing](#contributing)
-* [Tests](#tests)
 * [Questions](#questions)
 ## Website
 Please visit our website at: https://young-sierra-90065.herokuapp.com/
@@ -20,7 +19,18 @@ This repository is licensed under the Unlicense license.
 Email any of us!
 
 ## Questions
-Questions about this repository? Please contact us at [pedrocerv1@hotmail.com](mailto:pedrocerv1@hotmail.com) [fredmcwilliams92@gmail.com](mailto:fredmcwilliams92@gmail.com) [sara.m.adamski@gmail.com](mailto:sara.m.adamski@gmail.com) [marcosbadillo089@gmail.com](mailto:marcosbadillo089@gmail.com) [sonyarangraj@msn.com](mailto:sonyarangraj@msn.com) [princesstheaenriquez@gmail.com](mailto:princesstheaenriquez@gmail.com). 
+Questions about this repository? Please contact us at:  
+[pedrocerv1@hotmail.com](mailto:pedrocerv1@hotmail.com)  
+[fredmcwilliams92@gmail.com](mailto:fredmcwilliams92@gmail.com)  
+[sara.m.adamski@gmail.com](mailto:sara.m.adamski@gmail.com)   
+[marcosbadillo089@gmail.com](mailto:marcosbadillo089@gmail.com)  
+[sonyarangraj@msn.com](mailto:sonyarangraj@msn.com)   
+[princesstheaenriquez@gmail.com](mailto:princesstheaenriquez@gmail.com). 
 
-View more of our work in Github [AlfonsoCerv7](https://github.com/AlfonsoCerv7) [MBadi089](https://github.com/MBadi089) [sarawrmas](https://github.com/sarawrmas) [fmwilliams92](https://github.com/fmwilliams92) [SonyaRang](https://github.com/SonyaRang) [tenriquez95](https://github.com/tenriquez95)
-# Glad You Game
+View more of our work on Github:  
+[AlfonsoCerv7](https://github.com/AlfonsoCerv7)  
+[MBadi089](https://github.com/MBadi089)  
+[sarawrmas](https://github.com/sarawrmas)  
+[fmwilliams92](https://github.com/fmwilliams92)  
+[SonyaRang](https://github.com/SonyaRang)  
+[tenriquez95](https://github.com/tenriquez95)

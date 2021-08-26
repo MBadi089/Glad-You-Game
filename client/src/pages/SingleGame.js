@@ -6,13 +6,13 @@ import ReviewList from '../components/ReviewList';
 import ReviewForm from '../components/ReviewForm';
 import Auth from '../utils/auth';
 import { Link } from 'react-router-dom';
-import { gameArray } from '../components/Seeds';
+// import { gameArray } from '../components/Seeds';
 import "./single.css";
 const SingleThought = () => {
   const { gameId } = useParams();
 
-  // const [currentGame, setCurrentGame] = useState({});
-  let currentGame = gameArray[gameId];
+  const [currentGame, setCurrentGame] = useState({});
+  // let currentGame = gameArray[gameId];
 
   const { loading, data } = useQuery(GET_GAME, {
     variables: { gameId }
@@ -24,21 +24,21 @@ const SingleThought = () => {
     return <div>Loading...</div>;
   }
   
-  // fetch(`https://api.rawg.io/api/games/${gameId}?key=16667b48fd9647ccbc16de3d49ddc40e`)
-  // .then(response => {
-  //   return response.json()
-  // })
-  // .then(data => {
-  //   setCurrentGame({
-  //     gameId: data.id,
-  //     name: data.name,
-  //     description: data.description_raw,
-  //     image: data.background_image,
-  //     rating: data.rating,
-  //     ratings_count: data.ratings_count,
-  //     esrb: data.esrb_rating?.name || 'Not Specified'
-  //   })
-  // })
+  fetch(`https://api.rawg.io/api/games/${gameId}?key=d934c9f8768e4afaa5731eee8344c86f`)
+  .then(response => {
+    return response.json()
+  })
+  .then(data => {
+    setCurrentGame({
+      gameId: data.id,
+      name: data.name,
+      description: data.description_raw,
+      image: data.background_image,
+      rating: data.rating,
+      ratings_count: data.ratings_count,
+      esrb: data.esrb_rating?.name || 'Not Specified'
+    })
+  })
 
   return (
     <div>

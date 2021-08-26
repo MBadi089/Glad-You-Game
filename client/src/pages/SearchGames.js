@@ -6,9 +6,9 @@ import { SAVE_GAME } from '../utils/mutations';
 import { useMutation } from '@apollo/client';
 import { saveGameIds, getSavedGameIds } from '../utils/localStorage';
 import './search.css';
-import { gameArray } from '../components/Seeds';
+// import { gameArray } from '../components/Seeds';
 
-const APIKey = '16667b48fd9647ccbc16de3d49ddc40e'; //rawg api key
+const APIKey = 'd934c9f8768e4afaa5731eee8344c86f'; //rawg api key
 const urlGetGameList = 'https://api.rawg.io/api/games?key=';
 
 //adding a comment to see if everyone is up to date part 2
@@ -39,27 +39,27 @@ const SearchGames = () => {
         // }
 
         try {
-            // const response = await fetch(`${urlGetGameList}${APIKey}&search=${searchInput}`); 
-            // console.log(response);
+            const response = await fetch(`${urlGetGameList}${APIKey}&search=${searchInput}`); 
+            console.log(response);
 
-            // if (!response.ok){
-            //     throw new Error('something went wrong!');
-            // }
+            if (!response.ok){
+                throw new Error('something went wrong!');
+            }
 
-            // const { results } = await response.json();
-            // console.log(results)
+            const { results } = await response.json();
+            console.log(results)
 
-            // const gameResults = results.map(game => ({
-            //     gameId: game.id,
-            //     name: game.name,
-            //     image: game.background_image,
-            //     rating: game.rating,
-            //     ratings_count: game.ratings_count,
-            //     esrb: game.esrb_rating?.name || 'Not Specified'
-            // }));
+            const gameResults = results.map(game => ({
+                gameId: game.id,
+                name: game.name,
+                image: game.background_image,
+                rating: game.rating,
+                ratings_count: game.ratings_count,
+                esrb: game.esrb_rating?.name || 'Not Specified'
+            }));
 
-            // setSearchedGames(gameResults);
-            setSearchedGames(gameArray);
+            setSearchedGames(gameResults);
+            // setSearchedGames(gameArray);
             setSearchInput('');
         } catch (err) {
             console.error(err);
