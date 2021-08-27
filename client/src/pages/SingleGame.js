@@ -8,7 +8,7 @@ import Auth from '../utils/auth';
 import { Link } from 'react-router-dom';
 // import { gameArray } from '../components/Seeds';
 import "./single.css";
-const SingleThought = () => {
+const SingleGame = () => {
   const { gameId } = useParams();
 
   const [currentGame, setCurrentGame] = useState({});
@@ -24,7 +24,7 @@ const SingleThought = () => {
     return <div>Loading...</div>;
   }
   
-  fetch(`https://api.rawg.io/api/games/${gameId}?key=d934c9f8768e4afaa5731eee8344c86f`)
+  fetch(`https://api.rawg.io/api/games/${gameId}?key=302509f8152947829bed00d1332eb413`)
   .then(response => {
     return response.json()
   })
@@ -60,4 +60,4 @@ const SingleThought = () => {
   );
 };
 
-export default SingleThought;
+export default SingleGame;

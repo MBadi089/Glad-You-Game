@@ -8,7 +8,7 @@ import { saveGameIds, getSavedGameIds } from '../utils/localStorage';
 import './search.css';
 // import { gameArray } from '../components/Seeds';
 
-const APIKey = 'd934c9f8768e4afaa5731eee8344c86f'; //rawg api key
+const APIKey = '302509f8152947829bed00d1332eb413'; //rawg api key
 const urlGetGameList = 'https://api.rawg.io/api/games?key=';
 
 //adding a comment to see if everyone is up to date part 2
